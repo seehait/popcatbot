@@ -15,8 +15,8 @@ const execute = async () => {
         await page.waitForSelector(COUNTER_SELECTOR)
         await page.evaluate(function () {
             const EVENT = new KeyboardEvent('keydown', { key: 'SPACE' })
-            const EXPECTED_CPS = 5000
-            const BATCH_SIZE = 500
+            const EXPECTED_CPS = 800 / 30
+            const BATCH_SIZE = 1
 
             const interval = (1000 * BATCH_SIZE) / EXPECTED_CPS
             setInterval(() => {
